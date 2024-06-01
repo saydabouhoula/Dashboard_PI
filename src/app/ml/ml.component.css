@@ -1,0 +1,15 @@
+.result-box {
+    background-color: #bdc14b68;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 0px;
+    box-shadow: 0 9px 6px rgba(224, 11, 11, 0.1);
+   
+
+
+    
+}
+
+.result-box p {
+    margin: 40px;
+}

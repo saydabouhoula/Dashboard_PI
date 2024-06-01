@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('assets/green.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 750px;
+            height: 450px;
+            margin-top: 20px; /* Ajout de marge en haut */
+        }
+
+        .login-image img {
+            width: 250px; /* Ajustement de la taille de l'image */
+            height: auto; /* Laisser la hauteur s'ajuster automatiquement */
+        }
+
+        .login-form {
+            width: 300px;
+        }
+
+        .login-form h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #800020;
+            font-size: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            background-color: #800020;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #5b0013;
+        }
+
+        .social-icons img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="login-image">
+                <img src="assets/login.png" alt="Login Illustration" style="margin-right: 70px; height: 400px;" >
+                <div class="social-icons" style="margin-left: 40px; margin-bottom: 45px; size: 300px;">
+                    <img src="https://img.icons8.com/ios/50/000000/internet--v1.png" alt="Internet Icon" style="width: 50px; height: 50px;">
+                    <img src="https://img.icons8.com/ios/50/000000/linkedin-circled--v1.png" alt="LinkedIn Icon" style="width: 50px; height: 50px;">
+                    <img src="https://img.icons8.com/ios/50/000000/facebook-circled--v1.png" alt="Facebook Icon" style="width: 50px; height: 50px;">
+                </div>
+            </div>
+            
+            <div class="login-form">
+                <h1>Welcome</h1>
+                <form (ngSubmit)="submitForm()">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required [(ngModel)]="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" class="form-control" placeholder="Enter your password" required minlength="6" [(ngModel)]="password" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

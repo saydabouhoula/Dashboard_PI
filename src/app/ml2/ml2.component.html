@@ -1,0 +1,133 @@
+<div style="background-image: url('/assets/transport.jpeg'); background-size: cover; background-position: center; background-color: rgba(29, 7, 7, 0.5);">
+  <!-- Le contenu de votre barre de navigation -->
+  <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-danger rounded-5 shadow-sm" id="pillNav2" role="tablist"
+      style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+      <li class="nav-item" role="presentation">
+          <a class="nav-link active rounded-5" id="home-tab2" routerLink="/" routerLinkActive="active"
+              aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item" role="presentation">
+          <a class="nav-link rounded-5" id="profile-tab2" routerLink="/profile" routerLinkActive="active"
+              aria-selected="false">Profile</a>
+      </li>
+      <li class="nav-item" role="presentation">
+          <a class="nav-link rounded-5" id="contact-tab2" routerLink="/about" routerLinkActive="active"
+              aria-selected="false">Contact</a>
+      </li>
+  </ul>
+
+  <!-- Votre barre de navigation rétractable -->
+  <div class="pos-f-t">
+      <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-danger p-4">
+              <h5 class="text-white h4">Collapsed content</h5>
+              <span class="text-muted">Toggleable via the navbar brand.</span>
+          </div>
+      </div>
+      <nav class="navbar navbar-dark" style="background-color: #800020;">
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      </nav>
+  </div>
+
+  <!-- Le reste du contenu de votre AppComponent -->
+  <div class="d-flex">
+      <div class="flex-grow-1">
+          <div class="d-flex flex-column flex-shrink-0 p-3 text-white justify-content-center align-items-center"
+              style="width: 200px; height: 1000px; color: #800020; background-color: #800020;">
+              <a href="/" class="d-flex align-items-center justify-content-center text-white text-decoration-none">
+                  <img src="assets/rosee.png" alt="" width="130" height="40">
+                  <span class="fs-4"> </span>
+              </a>
+              <hr>
+              <ul class="nav nav-pills flex-column mb-auto text-center">
+                  <li class="nav-item">
+                      <a href="#" class="nav-link text-white">
+                          <svg class="bi me-2" width="16" height="16">
+                              <use xlink:href="#people-circle"></use>
+                          </svg>
+                          Help
+                      </a>
+                  </li>
+              </ul>
+              <hr>
+              <div class="dropdown">
+                  <a href="#"
+                      class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                      id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                      <li><a class="dropdown-item" href="#">New project...</a></li>
+                      <li><a class="dropdown-item" href="#">Settings</a></li>
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="flex-grow-1 d-flex justify-content-center" style="margin-top: 40px;">
+          <div class="container" style="background-color: rgba(227, 167, 167, 0.7); padding: 20px; border-radius: 10px;">
+              <h1 class="text-white">Prediction Form</h1>
+              <form (ngSubmit)="predict2()" #predictionForm="ngForm"> 
+                  <div class="mb-3">
+                      <label for="Transporteurs" class="form-label text-white">Carriers:</label>
+                      <input type="text" class="form-control" id="Transporteurs" name="Transporteurs" [(ngModel)]="formData.Transporteurs">
+                  </div>
+                  <div class="mb-3">
+                      <label for="Clients" class="form-label text-white">Clients:</label>
+                      <input type="text" class="form-control" id="Clients" name="Clients" [(ngModel)]="formData.Clients">
+                  </div>
+                  <div class="mb-3">
+                      <label for="Qt_BL_qx_x" class="form-label text-white">Qt_BL_qx_x:</label>
+                      <input type="text" class="form-control" id="Qt_BL_qx_x" name="Qt_BL_qx_x" [(ngModel)]="formData.Qt_BL_qx_x">
+                  </div>
+                  <div class="mb-3">
+                      <label for="Ecart_Qx" class="form-label text-white">Ecart_Qx:</label>
+                      <input type="text" class="form-control" id="Ecart_Qx" name="Ecart_Qx" [(ngModel)]="formData.Ecart_Qx">
+                  </div>
+                  <div class="mb-3">
+                      <label for="Type_Ecart" class="form-label text-white">Type_Ecart:</label>
+                      <input type="text" class="form-control" id="Type_Ecart" name="Type_Ecart" [(ngModel)]="formData.Type_Ecart">
+                  </div>
+                  <div class="mb-3">
+                      <label for="Count_Type_Ecart" class="form-label text-white">Count_Type_Ecart:</label>
+                      <input type="text" class="form-control" id="Count_Type_Ecart" name="Count_Type_Ecart" [(ngModel)]="formData.Count_Type_Ecart">
+                  </div>
+                  <div class="mb-3">
+                      <label for="NB_Entree_Transporteur" class="form-label text-white">NB_Entree_Transporteur:</label>
+                      <input type="text" class="form-control" id="NB_Entree_Transporteur" name="NB_Entree_Transporteur" [(ngModel)]="formData.NB_Entree_Transporteur">
+                  </div>
+                  <div class="mb-3">
+                      <label for="Qt_BL_NBP" class="form-label text-white">Qt_BL_NBP:</label>
+                      <input type="text" class="form-control" id="Qt_BL_NBP" name="Qt_BL_NBP" [(ngModel)]="formData.Qt_BL_NBP">
+                  </div>
+                  <div class="mb-3">
+                      <label for="Nombre_BL" class="form-label text-white">Number_BL:</label>
+                      <input type="text" class="form-control" id="Nombre_BL" name="Nombre_BL" [(ngModel)]="formData.Nombre_BL">
+                  </div>
+                  <div class="mb-3">
+                      <label for="remplisssage_par_quintaux" class="form-label text-white">Remplissage_per_quintals:</label>
+                      <input type="text" class="form-control" id="remplisssage_par_quintaux" name="remplisssage_par_quintaux" [(ngModel)]="formData.remplisssage_par_quintaux">
+                  </div>
+                  <button type="submit" class="btn btn-info" style="width: 100%;  background-color:#800020;color:aliceblue" [disabled]="predictionForm.invalid">
+                      <span style="font-size: 1.5rem;">Predict</span>
+                  </button>
+              </form>
+          </div>
+      </div>
+      <div class="flex-grow-1">
+          <div *ngIf="predictionResult" class="text-white mt-4">
+              <h2 class="mb-3">Prediction Result</h2>
+              <div class="result-box">
+                  <p><strong>Résultat de la prédiction :</strong> {{ predictionResult }}</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
