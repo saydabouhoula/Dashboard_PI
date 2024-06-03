@@ -13,6 +13,10 @@ import { MlComponent } from './ml/ml.component';
 import { TestComponent } from './test/test.component'; // Import FormsModule
 import { HttpClientModule } from '@angular/common/http';
 import { Ml2Component } from './ml2/ml2.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +28,8 @@ import { Ml2Component } from './ml2/ml2.component';
     MlComponent,
     TestComponent,
     Ml2Component,
+    ConfirmDialogComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,7 @@ import { Ml2Component } from './ml2/ml2.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

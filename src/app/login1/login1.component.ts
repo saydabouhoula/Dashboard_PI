@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { AuthService } from 'C:/Users/ICHRAK/Downloads/Dashboard/Dashboard/src/app/auth.service'; // Importez le service AuthService
-import { AuthService } from 'C:/Users/user/Downloads/Dashboard/Dashboard/src/app/auth.service'; // Importez le service AuthService depuis le même répertoire
+import { AuthService } from '../auth.service'; // Importez le service AuthService depuis le même répertoire
 
 @Component({
   selector: 'app-login1',

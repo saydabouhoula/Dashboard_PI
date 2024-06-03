@@ -24,6 +24,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <button class="btn btn-outline-light" style="margin-right: 35px;" (click)="logout()">LogOut</button>
+            <app-confirm-dialog *ngIf="showConfirmDialog" (confirm)="onConfirmDialogResult($event)"></app-confirm-dialog>
 
         </nav>
     </div>

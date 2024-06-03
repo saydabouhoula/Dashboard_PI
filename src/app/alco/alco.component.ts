@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-alco',
@@ -6,12 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./alco.component.css']
 })
 export class AlcoComponent {
+  showConfirmDialog = false;
+
+  constructor(private authService: AuthService) {}
+
   logout() {
-    const confirmation = confirm("Are you sure you want to logout?");
-    
-    if (confirmation) {
-      
-      window.location.href = "/"; 
+    this.showConfirmDialog = true;
+  }
+
+  onConfirmDialogResult(result: boolean) {
+    this.showConfirmDialog = false;
+    if (result) {
+      this.authService.logout();
     }
   }
 }

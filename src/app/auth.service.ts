@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
+  private isAuthenticated = false;
+
   private emailPageMapping: { [email: string]: { page: string, password: string } } = {
     'ALCO@gmail.com': { page: '/Alco', password: '111111' },
     'Sboula@gmail.com': { page: '/Sboula', password: '111111' }
@@ -23,10 +25,20 @@ export class AuthService {
 
     const nextPageInfo = this.emailPageMapping[email];
     if (nextPageInfo && password === nextPageInfo.password) {
+      this.isAuthenticated = true;
       this.router.navigateByUrl(nextPageInfo.page);
     } else {
       console.error('Email ou mot de passe non autorisés');
       alert('Email ou mot de passe non valide. Veuillez saisir des informations valides.');
     }
+  }
+
+  logout() {
+    this.isAuthenticated = false;
+    this.router.navigate(['/login']);
+  }
+
+  isLoggedIn(): boolean {
+    return this.isAuthenticated;
   }
 }
