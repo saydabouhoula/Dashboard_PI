@@ -1,0 +1,128 @@
+<div style="background-image: url('/assets/aaaa.jpg'); background-size: cover; background-position: center; background-color: rgba(29, 7, 7, 0.5);">
+    <!-- Le contenu de votre barre de navigation -->
+    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-danger rounded-5 shadow-sm" id="pillNav2" role="tablist"
+        style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active rounded-5" id="home-tab2" routerLink="/Alco" routerLinkActive="active"
+                aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link rounded-5" id="profile-tab2" routerLink="/profile" routerLinkActive="active"
+                aria-selected="false">Profile</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link rounded-5" id="contact-tab2" routerLink="/about" routerLinkActive="active"
+                aria-selected="false">Contact</a>
+        </li>
+    </ul>
+
+    <!-- Votre barre de navigation rétractable -->
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-danger p-4">
+                <h5 class="text-white h4">Collapsed content</h5>
+                <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark" style="background-color: #800020;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Le reste du contenu de votre AppComponent -->
+    <div class="d-flex">
+        <div class="flex-grow-1">
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-white justify-content-center align-items-center"
+                style="width: 200px; height: 1000px; color: #800020; background-color: #800020;">
+                <a href="/" class="d-flex align-items-center justify-content-center text-white text-decoration-none">
+                    <img src="assets/rosee.png" alt="" width="130" height="40">
+                    <span class="fs-4"> </span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto text-center">
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Help
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown">
+                    <a href="#"
+                        class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flex-grow-1 d-flex justify-content-center" style="margin-top: 40px; margin-right: 250px;">
+            <div class="container" style="background-color: rgba(227, 167, 167, 0.7);">
+                <!-- Prediction Form -->
+                <h1 class="text-white">Prediction Form</h1>
+                <form (ngSubmit)="predict3()" #predictionForm="ngForm">
+                    <div class="mb-3">
+                        <label for="Product" class="form-label text-white">Product Name:</label>
+                        <input type="text" class="form-control" id="Product" name="Product" [(ngModel)]="formData.Product"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Humidite" class="form-label text-white">Humidity:</label>
+                        <input type="text" class="form-control" id="Humidite" name="Humidite" [(ngModel)]="formData.Humidite"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Aw" class="form-label text-white">Aw:</label>
+                        <input type="text" class="form-control" id="Aw" name="Aw" [(ngModel)]="formData.Aw"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Proteine" class="form-label text-white">Protein:</label>
+                        <input type="text" class="form-control" id="Proteine" name="Proteine" [(ngModel)]="formData.Proteine"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Amidon" class="form-label text-white">Amidon:</label>
+                        <input type="text" class="form-control" id="Amidon" name="Amidon" [(ngModel)]="formData.Amidon"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Fibre" class="form-label text-white">Fibre:</label>
+                        <input type="text" class="form-control" id="Fibre" name="Fibre" [(ngModel)]="formData.Fibre"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Calcium" class="form-label text-white">Calcium:</label>
+                        <input type="text" class="form-control" id="Calcium" name="Calcium" [(ngModel)]="formData.Calcium"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-info" style="width: 100%;  background-color:#800020;color:aliceblue" [disabled]="predictionForm.invalid">
+                        Predict
+                    </button>
+                </form>
+
+                <div *ngIf="predictionResult"  class="container d-flex justify-content-center align-items-center" style="padding-top: 20px;">
+                    <h2> Le produit {{ formData.Product }} : {{ predictionResult.compliance }}</h2>
+                         <!-- <p>Conformité: {{ predictionResult.compliance }}</p>
+                         <p>Qualité: {{ predictionResult.quality }}</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

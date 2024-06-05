@@ -17,6 +17,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { ProfileComponent } from './profile/profile.component';
+import { Ml2AlcoComponent } from './ml2-alco/ml2-alco.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
     Ml2Component,
     ConfirmDialogComponent,
     ProfileComponent,
+    Ml2AlcoComponent,
   ],
   imports: [
     BrowserModule,

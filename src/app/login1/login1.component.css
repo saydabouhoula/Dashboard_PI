@@ -18,7 +18,15 @@
 }
 
 .login-container {
-    margin-top: 50px;
+    margin-top: 0;
+    margin-bottom: 80px;
+
 }
 
+.login-image {
+    margin-bottom: 0;
+}
 
+.login-form {
+    margin-left: 0;
+}

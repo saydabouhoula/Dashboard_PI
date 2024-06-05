@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-sboula',
@@ -6,12 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./sboula.component.css']
 })
 export class SboulaComponent {
+  showConfirmDialog = false;
+
+  constructor(private authService: AuthService) {}
+
   logout() {
-    const confirmation = confirm("Are you sure you want to logout?");
-    
-    if (confirmation) {
-      
-      window.location.href = "/"; 
+    this.showConfirmDialog = true;
+  }
+
+  onConfirmDialogResult(result: boolean) {
+    this.showConfirmDialog = false;
+    if (result) {
+      this.authService.logout();
     }
   }
 }

@@ -2,7 +2,7 @@
     <!-- Le contenu de votre barre de navigation -->
     <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-danger rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
         <li class="nav-item" role="presentation">
-            <a class="nav-link active rounded-5" id="home-tab2" routerLink="/" routerLinkActive="active" aria-selected="true">Home</a>
+            <a class="nav-link active rounded-5" id="home-tab2" routerLink="/Sboula" routerLinkActive="active" aria-selected="true">Home</a>
         </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link rounded-5" id="profile-tab2" routerLink="/profile" routerLinkActive="active" aria-selected="false">Profile</a>
@@ -24,6 +24,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <button class="btn btn-outline-light" style="margin-right: 35px;" (click)="logout()">LogOut</button>
+            <app-confirm-dialog *ngIf="showConfirmDialog" (confirm)="onConfirmDialogResult($event)"></app-confirm-dialog>
 
         </nav>
     </div>
@@ -40,8 +41,10 @@
                 <ul class="nav nav-pills flex-column mb-auto text-center">
                     
                     <li class="nav-item">
-                        <a routerLink="/Sboula" class="nav-link text-white">
-                            <img src="assets/sboula.png" alt="" width="40" height="40">Sboula 
+                        <a routerLink="/Sboula" class="nav-link active d-flex align-items-center justify-content-center" aria-current="page" style="--bs-nav-pills-link-active-bg: var(--bs-white); width: 180px;">
+                            <img src="assets/sboula.png" alt="" width="40" height="40">
+                            <span style="color: #800020; padding-left: 10px; font-size: 17px;">Sboula</span>
+ 
                         </a>
                     </li>
                     <li class="nav-item">

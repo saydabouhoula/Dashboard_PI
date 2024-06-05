@@ -10,11 +10,13 @@ import { MlComponent } from './ml/ml.component';
 import { TestComponent } from './test/test.component';
 import { Ml2Component } from './ml2/ml2.component';
 import { ProfileComponent } from './profile/profile.component';
+import { Ml2AlcoComponent } from './ml2-alco/ml2-alco.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full' },
   { path:'test', component: TestComponent, canActivate: [AuthGuard] },
   {path:'ml',component:MlComponent, canActivate: [AuthGuard]},
+  {path:'ml2alco',component:Ml2AlcoComponent, canActivate: [AuthGuard]},
   {path:'ml2',component:Ml2Component, canActivate: [AuthGuard]},
   {path:'login',component:Login1Component},
   {path:'about',component:AboutComponent},
