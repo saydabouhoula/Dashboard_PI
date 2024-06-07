@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
-
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-ml2-alco',
@@ -11,11 +8,11 @@ import { throwError } from 'rxjs';
 })
 export class Ml2AlcoComponent {
   formData: any = {};
-  predictionResult: any;
+  complianceResult: any;
   errorOccurred: boolean = false;
   errorMessage: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
 
   // Method to perform prediction
   predict3() {
@@ -29,25 +26,12 @@ export class Ml2AlcoComponent {
       "Calcium": this.formData.Calcium,
     };
 
-    this.http.post<any>('http://localhost:5000/predict', data)
-      .pipe(
-        catchError(this.handleError.bind(this))
-      )
-      .subscribe(
-        response => {
-          this.predictionResult = response;
-        }
-      );
-  }
-
-  private handleError(error: HttpErrorResponse) {
-    if (error.error && error.error.error && error.error.message) {
+    this.apiService.predictLogistic(data).subscribe((result: any) => {
+      this.complianceResult = result.compliance;
+    }, (error: any) => {
+      console.error('Error!', error);
       this.errorOccurred = true;
-      this.errorMessage = `${error.error.error}: ${error.error.message}`;
-    } else {
-      this.errorOccurred = true;
-      this.errorMessage = 'Something bad happened; please try again later.';
-    }
-    return throwError(this.errorMessage);
+      this.errorMessage = 'An error occurred while fetching the prediction result.';
+    });
   }
 }

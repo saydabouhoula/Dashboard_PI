@@ -15,16 +15,16 @@ export class MlComponent {
   // Method to perform prediction
   predict() {
     const data = {
-      "nom": this.formData.nom,
-      "proteine": this.formData.proteine,
-      "amidon": this.formData.amidon,
-      "calcium": this.formData.calcium
+      "Product": this.formData.nom, // Utilisez "Product" au lieu de "nom"
+      "Proteine": this.formData.proteine,
+      "Amidon": this.formData.amidon,
+      "Calcium": this.formData.calcium
     };
 
-    this.apiService.getData(data).subscribe(result => {
-      // Assign individual properties of prediction result
-      this.predictionResult = result.prediction;
-      // You can access individual properties like this.predictionResult.Cluster_Amidon, etc.
+    this.apiService.predictKMeans(data).subscribe((result: any) => {
+      this.predictionResult = result.prediction; // Accédez à la propriété 'prediction' au lieu de la racine
+    }, (error: any) => {
+      console.error('Error!', error);
     });
   }
 }

@@ -117,10 +117,8 @@
                     </button>
                 </form>
 
-                <div *ngIf="predictionResult"  class="container d-flex justify-content-center align-items-center" style="padding-top: 20px;">
-                    <h2> Le produit {{ formData.Product }} : {{ predictionResult.compliance }}</h2>
-                         <!-- <p>Conformité: {{ predictionResult.compliance }}</p>
-                         <p>Qualité: {{ predictionResult.quality }}</p> -->
+                <div *ngIf="complianceResult" class="container d-flex justify-content-center align-items-center" style="padding-top: 20px;">
+                    <h2> Le produit {{ formData.Product }} : {{ complianceResult }}</h2>
                 </div>
             </div>
         </div>

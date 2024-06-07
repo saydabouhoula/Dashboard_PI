@@ -107,6 +107,7 @@
 
             <div class="flex-grow-1" >
 
+               <!--
                 <div *ngIf="predictionResult" class="text-white mt-4" >
                     <h2 class="mb-3">Prediction Result</h2>
                     <div class="result-box">
@@ -119,6 +120,36 @@
                         <p><strong>Gamme de Calcium:</strong> {{ predictionResult.Cluster_Calcium }}</p>
                     </div>
                 </div>
+                
+                --------------------
+                <div *ngIf="predictionResult" class="text-white mt-4">
+                    <h2 class="mb-3">Prediction Result</h2>
+                    <div class="result-box">
+                        <p><strong>Prediction:</strong> {{ predictionResult }}</p>
+                    </div>
+                </div>
+                --> 
+                <div *ngIf="predictionResult" class="text-white mt-4" >
+                    <h2 class="mb-3">Prediction Result</h2>
+                    <div class="result-box">
+                        <p><strong>Gamme de Proteine:</strong> {{ predictionResult.Cluster_Proteine }}</p>
+                    </div>
+                </div>
+                
+                <div *ngIf="predictionResult" class="text-white mt-4" >
+                    <div class="result-box">
+                        <p><strong>Gamme d'Amidon:</strong> {{ predictionResult.Cluster_Amidon }}</p>
+                    </div>
+                </div>
+                
+                <div *ngIf="predictionResult" class="text-white mt-4" >
+                    <div class="result-box">
+                        <p><strong>Gamme de Calcium:</strong> {{ predictionResult.Cluster_Calcium }}</p>
+                    </div>
+                </div>
+                
+                
+                
             </div>
         </div>
     </div>
